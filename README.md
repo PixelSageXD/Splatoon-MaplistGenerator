@@ -5,7 +5,8 @@ The program is weighted to use more popular maps first, while limiting repeated 
 
 ## How to Use
 
-This is really simple - just download the `Set Maplist Generator.py` file then run it. It should open in some sort of command prompt window and you will be able to do all the inputs and get the correct output.
+This is really simple - just download the `Set-Maplist-Generator.py` file from the latest release then run it.
+It should open in some sort of command prompt window and you will be able to do all the inputs and get the correct output.
 If there are formatting errors or it doesn't work, then download an IDE/code editor like IDLE or VSCode and run the file inside those.
 
 ## Suggestions?
