@@ -13,3 +13,8 @@ If there are formatting errors or it doesn't work, then download an IDE/code edi
 
 Let me know!! I just made this as a silly project but I'd love to continue updating this for all of the needs of the comp Splatoon community :)
 I'm sure this program won't need editing for a while, but any bug reporting or feature ideas would be great.
+
+## Why not use Sendou?
+
+I felt like making this program so you should use it.
+More seriously - I felt like there were a few functions that would be nice to have in my own program (choosing exactly how many games of each mode, having weighted randomness, etc.)
