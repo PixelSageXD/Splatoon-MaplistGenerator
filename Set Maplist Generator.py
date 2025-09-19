@@ -42,20 +42,30 @@ while not valid:
     else:
         print("Your mode counts do not equal the total game count. Please retry.")  # ...loop if not
 
-def makeMapList():
-    mapList = []  # Create empty list for all maps, if a mode is being played add its list.
+def makeMapList(mapList, gameCounts, crntCounts): # If a mode is being played add its list and ready lists
     if szCount > 0:
         mapList.append(szList)
+        gameCounts.append(szCount)
+        crntCounts.append(0)
     if tcCount > 0:
         mapList.append(tcList)
+        gameCounts.append(tcCount)
+        crntCounts.append(0)
     if rmCount > 0:
         mapList.append(rmList)
+        gameCounts.append(rmCount)
+        crntCounts.append(0)
     if cbCount > 0:
         mapList.append(cbList)
-    return mapList
+        gameCounts.append(cbCount)
+        crntCounts.append(0)
+    return mapList, gameCounts, crntCounts
 
 mode = 0  # Initialise lists and variables needed
-mapList = makeMapList()
+mapList = []
+gameCounts = []
+crntCounts = []
+makeMapList(mapList, gameCounts, crntCounts)
 setMaps = []
 usedMaps = []
 usedMapModes = []
@@ -101,6 +111,11 @@ for i in range(gameCount):  # Loop for length of set
                     usedMaps = []
                     usedMapModes = []
 
+    crntCounts[mode] += 1  # Add 1 to the amount of times the selected mode has been played
+    if crntCounts[mode] == gameCounts[mode]:
+        mapList.pop(mode)  # Removes the mode from the options if all of its games have been played
+        gameCounts.pop(mode)
+        crntCounts.pop(mode)
     mode += 1  # Increment counter to allow mode to rotate
     if mode == len(mapList):  # Resets mode to 0 if it goes above the number of modes being played
         mode = 0
